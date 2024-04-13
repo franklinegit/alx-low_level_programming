@@ -12,6 +12,8 @@ typedef struct
     int capacity;
 }DynamicArray;
 
+void initArray(DynamicArray *arr, int no_of_elmts);
+void freeArray(DynamicArray *arr);
 
 /**
  * main - Entry function for initializing, element addition, printing, quiting, and freeing
@@ -29,6 +31,12 @@ int main(void)
     scanf("%d", &no_of_elmts);
 
     /* Initialize the array */
+    arr = (DynamicArray *)malloc(sizeof(DynamicArray));
+    if (arr == NULL)
+    {
+        fprintf(stderr, "Error. Could not allocate memory: %s\n", strerror(errno));
+        exit(EXIT_FAILURE);
+    }
     initArray(arr, no_of_elmts);
 
     /* Take user input to choose what operation to do, and perform operation*/
@@ -43,7 +51,7 @@ int main(void)
 /* Function for Initializing array */
 void initArray(DynamicArray *arr, int no_of_elmts)
 {
-    arr->array = (DynamicArray *)malloc(no_of_elmts * sizeof(int));
+    arr->array = (int *)malloc(no_of_elmts * sizeof(int));
     if (arr->array == NULL)
     {
         fprintf(stderr, "Error. Could not allocate memory: %s\n", strerror(errno));
@@ -63,3 +71,13 @@ void initArray(DynamicArray *arr, int no_of_elmts)
 
 
 /* Function to free memory */
+void freeArray(DynamicArray *arr)
+{
+    printf("Exiting...\n");
+
+    free(arr->array);
+    free(arr);
+
+    printf("Successfully freed the memory\n");
+    printf("\n");
+}
