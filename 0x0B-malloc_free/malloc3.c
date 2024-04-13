@@ -22,7 +22,7 @@ typedef struct
 int main(void)
 {
     /* Take user input on size of array */
-
+    printf("Enter no of elements to be stored in array: \n");
 
     /* Initialize the array */
 
