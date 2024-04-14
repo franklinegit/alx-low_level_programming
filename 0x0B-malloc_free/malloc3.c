@@ -23,7 +23,7 @@ void freeArray(DynamicArray *arr);
 
 int main(void)
 {
-    int no_of_elmts;
+    int no_of_elmts, choice, element;
     DynamicArray *arr;
 
     /* Take user input on size of array */
@@ -40,7 +40,36 @@ int main(void)
     initArray(arr, no_of_elmts);
 
     /* Take user input to choose what operation to do, and perform operation*/
+    do
+    {
+        printf("Choose what to do\n");
+        printf("1. Add element to array.\n");
+        printf("2. Print array elemts\n");
+        printf("3. Quit\n");
+        scanf("%d", &choice);
 
+        switch (choice)
+        {
+            case 1:
+                printf("Enter the element to add to the array\n");
+                scanf("%d", &element);
+                break;
+        
+            case 2:
+            /* code */
+                break;
+            
+            case 3:
+                freeArray(arr);
+                break;
+
+            default:
+                printf("Invalid choice. Please pick 1, 2 or 3\n");
+                printf("\n");
+                break;
+        }
+    } while (1);
+    
 
     /* Free allocated memory */
 
