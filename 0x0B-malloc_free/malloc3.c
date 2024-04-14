@@ -56,7 +56,7 @@ int main(void)
                 break;
         
             case 2:
-            /* code */
+                /* code */
                 break;
             
             case 3:
