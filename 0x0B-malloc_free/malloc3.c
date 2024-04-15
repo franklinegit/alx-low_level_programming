@@ -113,7 +113,7 @@ void addElem(DynamicArray *arr, int element)
 }
 
 
-/* Function to print array elemts */
+/* Function to print array elemts*/
 
 
 /* Function to free memory */
