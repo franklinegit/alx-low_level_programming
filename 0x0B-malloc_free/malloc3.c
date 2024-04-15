@@ -13,6 +13,7 @@ typedef struct
 }DynamicArray;
 
 void initArray(DynamicArray *arr, int no_of_elmts);
+void addElem(DynamicArray *arr, int element);
 void freeArray(DynamicArray *arr);
 
 /**
@@ -53,10 +54,11 @@ int main(void)
             case 1:
                 printf("Enter the element to add to the array\n");
                 scanf("%d", &element);
+				addElemt(arr, element);
                 break;
         
             case 2:
-                /* code */
+                printf("\n");
                 break;
             
             case 3:
@@ -94,6 +96,21 @@ void initArray(DynamicArray *arr, int no_of_elmts)
 }
 
 /* Function to add element */
+void addElem(DynamicArray *arr, int element)
+{
+	if (arr->size == arr->capacity)
+	{
+		arr->capacity *= 2;
+		arr->array = (int *)realloc(arr->array, arr->capacity * sizeof(int));
+		if (arr->array == NULL)
+		{
+			fprintf(stderr, "Error. Could not allocate memory: %s\n", strerror(errno));
+        	exit(EXIT_FAILURE);
+			
+		}
+	}
+	arr->array[arr->size++] = element;
+}
 
 
 /* Function to print array elemts */
