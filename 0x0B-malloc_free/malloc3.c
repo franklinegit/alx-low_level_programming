@@ -100,20 +100,24 @@ void addElem(DynamicArray *arr, int element)
 {
 	if (arr->size == arr->capacity)
 	{
+        printf("Not sufficient space in allocated memory\n");
+        printf("Reallocating memory to accomodate new element......\n");
 		arr->capacity *= 2;
 		arr->array = (int *)realloc(arr->array, arr->capacity * sizeof(int));
 		if (arr->array == NULL)
 		{
-			fprintf(stderr, "Error. Could not allocate memory: %s\n", strerror(errno));
+			fprintf(stderr, "Error. Could not reallocate memory: %s\n", strerror(errno));
         	exit(EXIT_FAILURE);
 			
 		}
 	}
 	arr->array[arr->size++] = element;
+    printf("Element successfully added.\n");
+    printf("\n");
 }
 
 
-/* Function to print array elemts*/
+/* Function to print array elemts */
 
 
 /* Function to free memory */
