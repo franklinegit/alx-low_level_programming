@@ -58,7 +58,7 @@ int main(void)
                 break;
         
             case 2:
-                printf("\n");
+                printArray(arr);
                 break;
             
             case 3:
@@ -118,6 +118,14 @@ void addElem(DynamicArray *arr, int element)
 
 
 /* Function to print array elemts */
+void printArray(DynamicArray *arr) 
+{
+    printf("Array Contents: ");
+    for (int i = 0; i < arr->size; i++) {
+        printf("%d ", arr->array[i]);
+    }
+    printf("\n");
+}
 
 
 /* Function to free memory */
