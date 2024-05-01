@@ -93,6 +93,25 @@ void addElem(dynamicArray *arr)
 	printf("\n");
 }
 
+void printArray(dynamicArray *arr)
+{
+	int i;
+
+	printf("Printing array elements.\n");
+	if (arr->num_occupied == 0)
+	{
+		printf("Array empty. No elements to print.\n");
+	}
+	else
+	{
+		for (i = 0; i < arr->num_occupied; i++)
+		{
+			printf("%d ", arr->array[i]);
+		}
+		printf("\n");
+	}
+}
+
 /**
  * main - Entry point to initialize, add elemnt, display, and free/exit
  * 
@@ -177,11 +196,13 @@ int main(void)
 		switch (choice)
 		{
 		case 1:
+			/* Add element to array */
 			addElem(arr);
 			break;
 		
 		case 2:
-			/* code */
+			/* Print contents of array */
+			printArray(arr);
 			break;
 
 		case 3:
