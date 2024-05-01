@@ -58,15 +58,15 @@ int main(void)
 		{
 		case 1:
 			/* Option to create bank account */
-			/* code */
+			createAccount(&myBank);
 			break;
 		
 		case 2:
-			/* code */
+			deposit(&myBank);
 			break;
 		
 		case 3:
-			/* code */
+			withdraw(&myBank);
 			break;
 
 		case 4:
