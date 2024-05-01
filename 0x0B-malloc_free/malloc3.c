@@ -14,6 +14,7 @@ typedef struct
 
 void initArray(DynamicArray *arr, int no_of_elmts);
 void addElem(DynamicArray *arr, int element);
+void printArray(DynamicArray *arr);
 void freeArray(DynamicArray *arr);
 
 /**
@@ -54,7 +55,7 @@ int main(void)
             case 1:
                 printf("Enter the element to add to the array\n");
                 scanf("%d", &element);
-				addElemt(arr, element);
+				addElem(arr, element);
                 break;
         
             case 2:
@@ -63,6 +64,7 @@ int main(void)
             
             case 3:
                 freeArray(arr);
+                return (EXIT_SUCCESS);
                 break;
 
             default:
