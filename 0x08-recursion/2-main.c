@@ -10,7 +10,7 @@ int main(void)
 {
     int n;
 
-    n = _strlen_recursion("Corbin Coleman");
+    n = _strlen_recursion1("Corbin Coleman");
     printf("%d\n", n);
     return (0);
 }
