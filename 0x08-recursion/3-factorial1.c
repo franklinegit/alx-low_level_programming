@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * @brief factorial1 - function that returns the factorial of a number
+ * 
+ * @param n: number whose factorial is to be returned
+ * @return int 
+ */
 int factorial1(int n)
 {
     if (n < 0)
